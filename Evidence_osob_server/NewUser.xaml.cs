@@ -38,5 +38,10 @@ namespace Evidence_osob_server
         {
 
         }
+
+        private void name_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }
