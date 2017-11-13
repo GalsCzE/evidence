@@ -80,6 +80,8 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Entity\User.cs" />
+    <Compile Include="Framy\Back.cs" />
+    <Compile Include="Framy\Front.cs" />
     <Compile Include="Interface\IParse.cs" />
     <Compile Include="JsonParsse\JsonParser.cs" />
     <Compile Include="MainWindow.xaml.cs">
