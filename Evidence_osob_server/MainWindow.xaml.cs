@@ -25,8 +25,8 @@ namespace Evidence_osob_server
         public MainWindow()
         {
             InitializeComponent();
-            Back.frame = frame;
-            Back.frame.Navigate(new UserList());
+            BackEnd.frame = frame;
+            BackEnd.frame.Navigate(new UserList());
         }
     }
 }

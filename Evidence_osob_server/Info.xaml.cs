@@ -60,18 +60,18 @@ namespace Evidence_osob_server
                 var client = new RestClient("https://student.sps-prosek.cz/~sevcima14!/Delete.php?ID=" + ID);
                 var request = new RestRequest(Method.GET);
                 IRestResponse response = client.Execute(request);
-                Back.frame.Navigate(new UserList());
+                BackEnd.frame.Navigate(new UserList());
             }
         }
 
         private void Edit_Click(object sender, RoutedEventArgs e)
         {
-            //Back.frame.Navigate(new NewUser(u));
+            BackEnd.frame.Navigate(new NewUser(u));
         }
 
         private void Back_Click(object sender, RoutedEventArgs e)
         {
-            //Back.frame.Navigate(new UserList());
+            BackEnd.frame.Navigate(new UserList());
         }
     }
 }

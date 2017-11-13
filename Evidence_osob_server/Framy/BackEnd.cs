@@ -7,7 +7,7 @@ using System.Windows.Controls;
 
 namespace Evidence_osob_server.Framy
 {
-    public static class Back
+    public static class BackEnd
     {
         public static Frame frame { get; set; }
     }

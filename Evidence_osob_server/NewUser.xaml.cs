@@ -83,11 +83,11 @@ namespace Evidence_osob_server
             Create();
             if (edit)
             {
-                Back.frame.Navigate(new Info(u.ID));
+                BackEnd.frame.Navigate(new Info(u.ID));
             }
             else
             {
-                Back.frame.Navigate(new UserList());
+                BackEnd.frame.Navigate(new UserList());
             }
         }
 
@@ -95,11 +95,11 @@ namespace Evidence_osob_server
         {
             if (edit)
             {
-                Back.frame.Navigate(new Info(u.ID));
+                BackEnd.frame.Navigate(new Info(u.ID));
             }
             else
             {
-                Back.frame.Navigate(new UserList());
+                BackEnd.frame.Navigate(new UserList());
             }
         }
 
