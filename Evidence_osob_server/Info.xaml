@@ -9,33 +9,35 @@
       Title="Info">
 
     <Grid>
-        <StackPanel>
-            <Button x:Name="Back" Click="Back_Click" DockPanel.Dock="Top" Content="Zpět">
-            </Button>
-            <Button x:Name="Edit" Click="Edit_Click" Content="Editovat">
-            </Button>
-            <Button x:Name="Delete" Click="Delete_Click" Content="Smazat">
-            </Button>
-        <Grid Margin="15">
-            <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
-            <Label>Jméno</Label>
-            <Label Grid.Column="0" Grid.Row="1">Pohlaví</Label>
-            <Label Grid.Column="0" Grid.Row="2">Rodné číslo</Label>
-            <Label Grid.Column="0" Grid.Row="3">Datum narození</Label>
-            <Label x:Name="name" Grid.Column="1" Grid.Row="0"></Label>
-            <Label x:Name="gender" Grid.Column="1" Grid.Row="1"></Label>
-            <Label x:Name="birth_num" Grid.Column="1" Grid.Row="2"></Label>
-            <Label x:Name="birth" Grid.Column="1" Grid.Row="3"></Label>
-        </Grid>
-        </StackPanel>
+        <ScrollViewer>
+            <StackPanel>
+                <Button x:Name="Back" Click="Back_Click" DockPanel.Dock="Top" Content="Zpět">
+                </Button>
+                <Button x:Name="Edit" Click="Edit_Click" Content="Editovat">
+                </Button>
+                <Button x:Name="Delete" Click="Delete_Click" Content="Smazat">
+                </Button>
+                <Grid Margin="15">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Label>Jméno</Label>
+                    <Label Grid.Column="0" Grid.Row="1">Pohlaví</Label>
+                    <Label Grid.Column="0" Grid.Row="2">Rodné číslo</Label>
+                    <Label Grid.Column="0" Grid.Row="3">Datum narození</Label>
+                    <Label x:Name="name" Grid.Column="1" Grid.Row="0"></Label>
+                    <Label x:Name="gender" Grid.Column="1" Grid.Row="1"></Label>
+                    <Label x:Name="birth_num" Grid.Column="1" Grid.Row="2"></Label>
+                    <Label x:Name="birth" Grid.Column="1" Grid.Row="3"></Label>
+                </Grid>
+            </StackPanel>
+        </ScrollViewer>
     </Grid>
 </Page>

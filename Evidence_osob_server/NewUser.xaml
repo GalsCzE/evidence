@@ -9,22 +9,24 @@
       Title="NewUser">
 
     <Grid>
-        <StackPanel>
-            <Button x:Name="back_btn" Click="back_btn_Click" Content="Zpět"></Button>
-            <Label>Jméno</Label>
-            <TextBox x:Name="name" TextChanged="name_TextChanged"></TextBox>
-            <Label>Příjmení</Label>
-            <TextBox x:Name="surname"></TextBox>
-            <Label>Rodné číslo</Label>
-            <TextBox x:Name="birth_num"></TextBox>
-            <Label>Datum narození</Label>
-            <Calendar x:Name="birth"></Calendar>
-            <ComboBox x:Name="select" SelectedValuePath="Content">
-                <ComboBoxItem IsEnabled="False" IsSelected="True">Pohlaví</ComboBoxItem>
-                <ComboBoxItem>Muž</ComboBoxItem>
-                <ComboBoxItem>Žena</ComboBoxItem>
-            </ComboBox>
-            <Button x:Name="created" Click="created_Click">Create user</Button>
-        </StackPanel>
+        <ScrollViewer>
+            <StackPanel>
+                <Button x:Name="back_btn" Click="back_btn_Click" Content="Zpět"></Button>
+                <Label>Jméno</Label>
+                <TextBox x:Name="name" TextChanged="name_TextChanged"></TextBox>
+                <Label>Příjmení</Label>
+                <TextBox x:Name="surname"></TextBox>
+                <Label>Rodné číslo</Label>
+                <TextBox x:Name="birth_num"></TextBox>
+                <Label>Datum narození</Label>
+                <Calendar x:Name="birth"></Calendar>
+                <ComboBox x:Name="select" SelectedValuePath="Content">
+                    <ComboBoxItem IsEnabled="False" IsSelected="True">Pohlaví</ComboBoxItem>
+                    <ComboBoxItem>Muž</ComboBoxItem>
+                    <ComboBoxItem>Žena</ComboBoxItem>
+                </ComboBox>
+                <Button x:Name="created" Click="created_Click">Create user</Button>
+            </StackPanel>
+        </ScrollViewer>
     </Grid>
 </Page>

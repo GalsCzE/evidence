@@ -9,18 +9,20 @@
       Title="UserList">
 
     <Grid>
-        <StackPanel>
-            <Button x:Name="Add_btn" Click="Add_btn_Click" Content="Přidat uživatele"></Button>
-            <Grid>
-                <ListView x:Name="People_list" SelectionChanged="People_list_SelectionChanged" ScrollViewer.CanContentScroll="True" ScrollViewer.HorizontalScrollBarVisibility="Hidden" ScrollViewer.VerticalScrollBarVisibility="Hidden">
-                    <ListView.View>
-                        <GridView>
-                            <GridViewColumn Header="Jméno" Width="150" DisplayMemberBinding="{Binding name}" />
-                            <GridViewColumn Header="Příjmení" Width="200" DisplayMemberBinding="{Binding surname}" />
-                        </GridView>
-                    </ListView.View>
-                </ListView>
-            </Grid>
-        </StackPanel>
+        <ScrollViewer>
+            <StackPanel>
+                <Button x:Name="Add_btn" Click="Add_btn_Click" Content="Přidat uživatele"></Button>
+                <Grid>
+                    <ListView x:Name="People_list" SelectionChanged="People_list_SelectionChanged" ScrollViewer.CanContentScroll="True" ScrollViewer.HorizontalScrollBarVisibility="Hidden" ScrollViewer.VerticalScrollBarVisibility="Hidden">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="Jméno" Width="150" DisplayMemberBinding="{Binding name}" />
+                                <GridViewColumn Header="Příjmení" Width="200" DisplayMemberBinding="{Binding surname}" />
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </Grid>
+            </StackPanel>
+        </ScrollViewer>
     </Grid>
 </Page>

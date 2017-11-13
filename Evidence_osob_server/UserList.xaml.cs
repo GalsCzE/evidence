@@ -50,13 +50,14 @@ namespace Evidence_osob_server
         }
         private void Add_btn_Click(object sender, RoutedEventArgs e)
         {
-            int id = ((User)People_list.SelectedItem).ID;
-            BackEnd.frame.Navigate(new Info(id));
+            BackEnd.frame.Navigate(new NewUser());
         }
 
         private void People_list_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            BackEnd.frame.Navigate(new NewUser());
+            
+            int id = ((User)People_list.SelectedItem).ID;
+            BackEnd.frame.Navigate(new Info(id));
         }
     }
 }
