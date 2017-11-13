@@ -42,7 +42,7 @@ namespace Evidence_osob_server
 
         private void GetUser()
         {
-            var client = new RestClient("https://student.sps-prosek.cz/~sevcima14/dotaz.php?ID=" + ID);
+            var client = new RestClient("https://student.sps-prosek.cz/~sevcima14/4ITB/dotaz.php?ID=" + ID);
             var request = new RestRequest(Method.GET);
             request.AddHeader("cache-control", "no-cache");
             IRestResponse response = client.Execute(request);
@@ -57,7 +57,7 @@ namespace Evidence_osob_server
             var result = MessageBox.Show("Smazat " + u.name + " ?", "Deleting item", MessageBoxButton.YesNo);
             if (result == MessageBoxResult.Yes)
             {
-                var client = new RestClient("https://student.sps-prosek.cz/~sevcima14!/Delete.php?ID=" + ID);
+                var client = new RestClient("https://student.sps-prosek.cz/~sevcima14/4ITB/Delete.php?ID=" + ID);
                 var request = new RestRequest(Method.GET);
                 IRestResponse response = client.Execute(request);
                 BackEnd.frame.Navigate(new UserList());

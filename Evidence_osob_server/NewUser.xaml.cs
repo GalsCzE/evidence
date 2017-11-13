@@ -58,12 +58,12 @@ namespace Evidence_osob_server
                 uc.gender = select.SelectedValue.ToString();
                 if (edit)
                 {
-                    url = "https://student.sps-prosek.cz/~sevcima14/Insert.php?ID=" + u.ID;
+                    url = "https://student.sps-prosek.cz/~sevcima14/4ITB/Insert.php?ID=" + u.ID;
                     MessageBox.Show(url);
                 }
                 else
                 {
-                    url = "https://student.sps-prosek.cz/~sevcima14/Insert.php";
+                    url = "https://student.sps-prosek.cz/~sevcima14/4ITB/Insert.php";
                 }
                 var client = new RestClient(url);
                 var request = new RestRequest(Method.POST);
