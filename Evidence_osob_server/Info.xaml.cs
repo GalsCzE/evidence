@@ -12,6 +12,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Evidence_osob_server.Entity;
+using Evidence_osob_server.Framy;
+using Evidence_osob_server.Interface;
+using Evidence_osob_server.JsonParsse;
 
 namespace Evidence_osob_server
 {
@@ -20,9 +24,19 @@ namespace Evidence_osob_server
     /// </summary>
     public partial class Info : Page
     {
-        public Info()
+        User u;
+        int ID;
+
+        public Info(int id)
         {
             InitializeComponent();
+            InitializeComponent();
+            ID = id;
+            // GetUser();
+            name.Content = u.name + " " + u.surname;
+            gender.Content = u.gender;
+            birth.Content = u.birth.ToString("dd.MM. yyyy");
+            birth_num.Content = u.birth_num;
         }
 
         private void Delete_Click(object sender, RoutedEventArgs e)
