@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Evidence_osob_server.Entity;
+using Evidence_osob_server.Framy;
 
 namespace Evidence_osob_server
 {
@@ -23,6 +25,8 @@ namespace Evidence_osob_server
         public MainWindow()
         {
             InitializeComponent();
+            Back.frame = frame;
+            Back.frame.Navigate(new UserList());
         }
     }
 }

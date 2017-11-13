@@ -13,9 +13,11 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Evidence_osob_server.Entity;
-using Evidence_osob_server.Framy;
 using Evidence_osob_server.Interface;
 using Evidence_osob_server.JsonParsse;
+using RestSharp;
+using Newtonsoft.Json;
+using Evidence_osob_server.Framy;
 
 namespace Evidence_osob_server
 {
@@ -26,32 +28,50 @@ namespace Evidence_osob_server
     {
         User u;
         int ID;
-
         public Info(int id)
         {
             InitializeComponent();
             InitializeComponent();
             ID = id;
-            // GetUser();
+            GetUser();
             name.Content = u.name + " " + u.surname;
             gender.Content = u.gender;
             birth.Content = u.birth.ToString("dd.MM. yyyy");
             birth_num.Content = u.birth_num;
         }
 
+        private void GetUser()
+        {
+            var client = new RestClient("https://student.sps-prosek.cz/~sevcima14/dotaz.php?ID=" + ID);
+            var request = new RestRequest(Method.GET);
+            request.AddHeader("cache-control", "no-cache");
+            IRestResponse response = client.Execute(request);
+            IParse parser = new JsonParser();
+            string result = response.Content.Replace(@"[", "");
+            result = result.Replace(@"]", "");
+            u = JsonConvert.DeserializeObject<User>(result);
+        }
+
         private void Delete_Click(object sender, RoutedEventArgs e)
         {
-
+            var result = MessageBox.Show("Smazat " + u.name + " ?", "Deleting item", MessageBoxButton.YesNo);
+            if (result == MessageBoxResult.Yes)
+            {
+                var client = new RestClient("https://student.sps-prosek.cz/~sevcima14!/Delete.php?ID=" + ID);
+                var request = new RestRequest(Method.GET);
+                IRestResponse response = client.Execute(request);
+                Back.frame.Navigate(new UserList());
+            }
         }
 
         private void Edit_Click(object sender, RoutedEventArgs e)
         {
-
+            //Back.frame.Navigate(new NewUser(u));
         }
 
         private void Back_Click(object sender, RoutedEventArgs e)
         {
-
+            //Back.frame.Navigate(new UserList());
         }
     }
 }
