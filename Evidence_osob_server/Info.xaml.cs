@@ -1,4 +1,6 @@
-﻿using System;
+﻿using RestSharp;
+using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,8 +17,6 @@ using System.Windows.Shapes;
 using Evidence_osob_server.Entity;
 using Evidence_osob_server.Interface;
 using Evidence_osob_server.JsonParsse;
-using RestSharp;
-using Newtonsoft.Json;
 using Evidence_osob_server.Framy;
 
 namespace Evidence_osob_server
@@ -31,7 +31,6 @@ namespace Evidence_osob_server
         public Info(int id)
         {
             InitializeComponent();
-            InitializeComponent();
             ID = id;
             GetUser();
             name.Content = u.name + " " + u.surname;
@@ -43,6 +42,7 @@ namespace Evidence_osob_server
         private void GetUser()
         {
             var client = new RestClient("https://student.sps-prosek.cz/~sevcima14/4ITB/dotaz.php?ID=" + ID);
+            //var client = new RestClient("https://requestb.in/19vwv091");
             var request = new RestRequest(Method.GET);
             request.AddHeader("cache-control", "no-cache");
             IRestResponse response = client.Execute(request);
